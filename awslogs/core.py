@@ -203,7 +203,7 @@ class AWSLogs(object):
                     if not isinstance(message, str):
                         message = json.dumps(message)
                 output.append(message.rstrip())
-                print(" ".join(output))
+                print(" ".join(output).encode("utf-8", errors="replace").decode("utf-8"))
 
                 try:
                     sys.stdout.flush()
