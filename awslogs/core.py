@@ -18,6 +18,8 @@ from dateutil.tz import tzutc
 
 from . import exceptions
 
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 
 def milis2iso(milis):
     res = datetime.utcfromtimestamp(milis / 1000.0).isoformat()
